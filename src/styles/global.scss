@@ -1,0 +1,44 @@
+@use './components/colors' as *;
+@use './components/mixins';
+@use './components/fonts';
+@use './components/buttons';
+@use './components/icons';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $white;
+}
+
+.wrapper {
+  max-width: 1480px;
+  padding: 0 20px;
+  margin: 0 auto;
+  width: 100%;
+
+  @include mixins.media-query('small') {
+    padding: 0 16px;
+  }
+}
+
+main {
+  @include mixins.min-height();
+  background-color: $purple-900;
+  background: linear-gradient(180deg, $purple-900 78%, $purple-500 120%);
+  position: relative;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+  background: $purple-900;
+}
+::-webkit-scrollbar-thumb {
+  background: $purple-100;
+  border-radius: 4px;
+}

@@ -1,0 +1,68 @@
+@use '../../styles/components/colors' as *;
+@use '../../styles/components/mixins';
+
+.login {
+  position: relative;
+
+  .wrapper {
+    @include mixins.min-height();
+    @include mixins.flex-center(column);
+  }
+
+  h2 {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01rem;
+    margin: 40px 0 80px;
+    text-align: center;
+
+    strong {
+      background: -webkit-linear-gradient(70deg, $blue 20%, $pink);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 32px;
+    width: 80%;
+    background-color: $white;
+    padding: 64px 32px;
+    border-radius: 25px;
+    box-shadow: 0px 7px 24px #b966d390;
+    margin-bottom: 94px;
+    min-width: 450px;
+    justify-items: center;
+
+    @include mixins.media-query('small') {
+      min-width: initial;
+      padding: 32px 16px;
+      width: 100%;
+    }
+  }
+
+  &__form {
+    &-btn {
+      max-width: 250px;
+      height: 54px;
+      font-size: 18px;
+      box-shadow: 0px 5px 12px #00000030 !important;
+      margin-top: 32px;
+    }
+
+    @include mixins.media-query('small') {
+      &-container {
+        width: 100%;
+      }
+
+      &-btn {
+        margin-top: 16px;
+      }
+    }
+  }
+}

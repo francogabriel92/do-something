@@ -1,0 +1,98 @@
+@use '../../../styles/components/colors' as *;
+@use '../../../styles/components/mixins';
+
+.select-input__group {
+  width: 100%;
+  position: relative;
+  min-width: 300px;
+
+  @include mixins.media-query('small') {
+    min-width: 270px;
+  }
+
+  label {
+    font-size: 16px;
+    line-height: 24px;
+    color: $purple-900;
+    margin-bottom: 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 16px;
+  }
+
+  .input {
+    &-wrapper {
+      position: relative;
+      height: 72px;
+      border: 2px solid $purple-900;
+      border-radius: 25px;
+      display: flex;
+      width: 100%;
+    }
+
+    &-icon {
+      width: 20%;
+      height: 100%;
+      border-right: 1px solid $purple-900;
+      @include mixins.flex-center();
+
+      figure {
+        width: 32px;
+        height: 32px;
+        margin: 0;
+        color: $purple-900;
+      }
+    }
+  }
+}
+
+// Select styles override
+.select-input__select {
+  width: 70% !important;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+
+  &__control {
+    width: 100% !important;
+    height: 50px !important;
+    background-color: $white !important;
+    border: none !important;
+
+    &--is-focused {
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  &__menu {
+    transform: translateY(-15px);
+    background-color: $white !important;
+
+    &-list::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+
+  &__option {
+    color: $purple-900 !important;
+  }
+
+  &__indicator-separator {
+    display: none !important;
+  }
+
+  &__placeholder {
+    color: $purple-900 !important;
+  }
+
+  &__indicator svg {
+    fill: $purple-900 !important;
+    stroke: $purple-900 !important;
+  }
+
+  &__single-value {
+    color: $purple-900 !important;
+    font-weight: bold !important;
+  }
+}

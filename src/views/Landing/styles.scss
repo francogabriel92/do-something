@@ -1,0 +1,74 @@
+@use '../../styles/components/colors' as *;
+@use '../../styles/components/mixins';
+
+.landing {
+  position: relative;
+
+  .wrapper {
+    @include mixins.min-height();
+    @include mixins.flex-center();
+    z-index: 2;
+  }
+
+  &__text {
+    width: 50%;
+    h2 {
+      font-size: 64px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.01rem;
+      margin-bottom: 24px;
+
+      strong {
+        background: -webkit-linear-gradient(240deg, $pink, $blue);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    p {
+      font-size: 24px;
+      line-height: 150%;
+    }
+
+    .btn {
+      margin-top: 32px;
+    }
+  }
+
+  &__img {
+    width: 50%;
+    @include mixins.flex-center();
+  }
+
+  @include mixins.media-query('medium') {
+    .wrapper {
+      flex-direction: column;
+    }
+
+    &__text {
+      width: 100%;
+      max-width: 700px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+      text-align: center;
+
+      h2 {
+        font-size: 42px;
+      }
+
+      p {
+        font-size: 18px;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    &__img img {
+      width: 320px;
+    }
+  }
+}

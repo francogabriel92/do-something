@@ -1,0 +1,64 @@
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  background-position: center;
+  display: inline-block;
+
+  &-name {
+    background-image: url('/assets/icons/name.svg');
+  }
+  &-email {
+    background-image: url('/assets/icons/email.svg');
+  }
+  &-lastname {
+    background-image: url('/assets/icons/lastname.svg');
+  }
+  &-eye {
+    background-image: url('/assets/icons/eye-opened.svg');
+
+    &-closed {
+      background-image: url('/assets/icons/eye-closed.svg');
+      position: relative;
+      top: 5px;
+    }
+  }
+  &-calendar {
+    background-image: url('/assets/icons/calendar.svg');
+  }
+  &-type {
+    background-image: url('/assets/icons/type.svg');
+  }
+  &-participants {
+    background-image: url('/assets/icons/participants.svg');
+  }
+  &-education {
+    background-image: url('/assets/images/activities/education.svg');
+  }
+  &-recreational {
+    background-image: url('/assets/images/activities/recreational.svg');
+  }
+  &-social {
+    background-image: url('/assets/images/activities/social.svg');
+  }
+  &-relaxation {
+    background-image: url('/assets/images/activities/relax.svg');
+  }
+  &-cooking {
+    background-image: url('/assets/images/activities/cook.svg');
+  }
+  &-diy {
+    background-image: url('/assets/images/activities/diy.svg');
+  }
+  &-busywork {
+    background-image: url('/assets/images/activities/busywork.svg');
+  }
+  &-music {
+    background-image: url('/assets/images/activities/music.svg');
+  }
+  &-charity {
+    background-image: url('/assets/images/activities/charity.svg');
+  }
+}

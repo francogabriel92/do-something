@@ -1,0 +1,77 @@
+@use '../../../styles/components/colors' as *;
+@use '../../../styles/components/mixins';
+
+.input-group {
+  width: 100%;
+  position: relative;
+  label {
+    font-size: 16px;
+    line-height: 24px;
+    color: $purple-900;
+    margin-bottom: 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 16px;
+  }
+}
+
+.input {
+  &-wrapper {
+    position: relative;
+    height: 72px;
+    border: 2px solid $purple-900;
+    border-radius: 25px;
+    display: flex;
+    width: 100%;
+
+    input {
+      all: unset;
+      width: 100%;
+      height: 100%;
+      padding: 0 16px;
+      font-size: 16px;
+      line-height: 24px;
+      color: $purple-900;
+    }
+  }
+
+  &-icon {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid $purple-900;
+    @include mixins.flex-center();
+
+    figure {
+      width: 32px;
+      height: 32px;
+      margin: 0;
+    }
+
+    &.password {
+      cursor: pointer;
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  animation: error-fade-in 0.5s ease-in-out forwards;
+  margin-top: 10px;
+  margin-left: 16px;
+
+  &::before {
+    content: '* ';
+  }
+}
+
+@keyframes error-fade-in {
+  0% {
+    opacity: 0;
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    max-height: 300px;
+  }
+}

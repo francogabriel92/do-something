@@ -1,0 +1,56 @@
+@use '../../styles/components/colors' as *;
+@use '../../styles/components/mixins';
+
+.home {
+  .wrapper {
+    @include mixins.min-height();
+    @include mixins.flex-center();
+    flex-direction: column;
+  }
+
+  &__text {
+    font-size: 28px;
+    padding-top: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 56px;
+
+    strong {
+      display: inline-block;
+      padding: 10px;
+      background: -webkit-linear-gradient(240deg, $pink, $blue);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @include mixins.media-query('small') {
+      font-size: 24px;
+    }
+  }
+
+  &__activities-list {
+    margin-bottom: 104px;
+  }
+
+  .activity-card {
+    margin-bottom: 64px;
+  }
+
+  @include mixins.media-query('small') {
+    &__activity-container {
+      max-width: 100%;
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 23px;
+      margin-bottom: 32px;
+    }
+
+    .activity-card {
+      margin-bottom: 48px;
+      max-width: 100%;
+    }
+  }
+}

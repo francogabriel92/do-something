@@ -1,0 +1,21 @@
+@use './breakpoints' as *;
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+}
+
+@mixin min-height() {
+  // Here we use the calc() function to subtract the height
+  // of the header from the height of the viewport.
+  $full-height: calc(100vh - 72px);
+  min-height: $full-height;
+}
+
+@mixin media-query($breakpoint) {
+  @media only screen and (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}

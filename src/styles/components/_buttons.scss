@@ -1,0 +1,49 @@
+@use './colors' as *;
+
+.btn {
+  cursor: pointer;
+  border-radius: 32px;
+  background-color: $purple-500;
+  background: linear-gradient(170deg, $purple-500 20%, $blue 100%);
+  padding: 12px 32px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  letter-spacing: -0.01rem;
+  outline: none;
+  border: none;
+  box-shadow: 1px 6px 12px #b966d320;
+  transition: transform 0.2s ease, top 0.1s ease;
+  transform: scale(1);
+  position: relative;
+  top: 0;
+  color: $white;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    top: 2px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &--secondary {
+    background-color: $pink;
+    background: linear-gradient(170deg, $blue 40%, $pink 100%);
+  }
+
+  &--jumbo {
+    padding: 24px 32px;
+    font-size: 24px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
